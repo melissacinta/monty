@@ -113,3 +113,19 @@ void print_all(stack_t **stack, unsigned int line_number)
 		h = h->next;
 	}
 }
+
+/**
+ * _pint - prints the value at the top of the stack
+ * @head: stack head
+ * @line_number: line_number
+ */
+void _pint(stack_t **head, unsigned int line_number)
+{
+	if (*head == NULL)
+	{
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+		close_free_and_fail(*head, store.content, store.file);
+
+	}
+	printf("%d\n", (*head)->n);
+}
