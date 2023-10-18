@@ -1,5 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
+#define  _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -18,9 +19,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -56,5 +57,10 @@ typedef struct instruction_s
 
 void free_stack(stack_t *head);
 int call_func(char *content, stack_t **head, unsigned int counter, FILE *file);
+void close_free_and_fail(stack_t *stack, char *content, FILE *file);
+void add_node(stack_t **head, int n);
+void add_queue(stack_t **head, int n);
+void push_to_stack(stack_t **stack, unsigned int line_number);
+void print_all(stack_t **stack, unsigned int line_number);
 
 #endif
