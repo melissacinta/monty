@@ -16,7 +16,7 @@ void push_to_stack(stack_t **stack, unsigned int line_number)
 		for (; store.ag[i] != '\0'; i++)
 		{
 			if (store.ag[i] < 48 || store.ag[i] > 57)
-				flag = 1; 
+				flag = 1;
 		}
 		if (flag == 1)
 		{
@@ -96,10 +96,9 @@ void add_queue(stack_t **head, int n)
 
 /**
  * print_all - prints the stack
- * @head: stack head
- * @counter: no used
- * Return: no return
-*/
+ * @stack: stack head
+ * @line_number: not used
+ */
 void print_all(stack_t **stack, unsigned int line_number)
 {
 	stack_t *h;

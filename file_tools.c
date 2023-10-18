@@ -31,13 +31,19 @@ int call_func(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		i++;
 	}
 	if (op && funcs[i].opcode == NULL)
-	{ 
+	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
 		close_free_and_fail(*stack, content, file);
 	}
 	return (1);
 }
 
+/**
+ * close_free_and_fail - function to close, free and exit a process
+ * @stack: head of the stack
+ * @content: content to be freed
+ * @file: file to be closed
+ */
 void close_free_and_fail(stack_t *stack, char *content, FILE *file)
 {
 	fclose(file);
