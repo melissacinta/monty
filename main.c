@@ -1,4 +1,5 @@
 #include "monty.h"
+store_t store = {NULL, NULL, NULL, 0};
 
 /**
  * main - function tp read monty byte code
@@ -36,7 +37,7 @@ int main(int ac, char *av[])
 		input_line = getline(&content, &size, file);
 		store.content = content;
 		counter++;
-		if (read_line > 0)
+		if (input_line > 0)
 		{
 			call_func(content, &stack, counter, file);
 		}
@@ -44,5 +45,5 @@ int main(int ac, char *av[])
 	}
 	free_stack(stack);
 	fclose(file);
-	return (0)
+	return (0);
 }
