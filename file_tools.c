@@ -17,23 +17,23 @@ int call_func(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		{"stack", _stack}, {"queue", _queue}, {"pstr", pstr},
 		{NULL, NULL}
 	};
-	unsigned int i = 0;
+	unsigned int i, flag;
 	char *op;
 
 	op = strtok(content, " \n\t");
 	if (op && op[0] == '#')
 		return (0);
 	store.ag = strtok(NULL, " \n\t");
-	while (funcs[i].opcode && op)
+	for (flag = 1, i = 0; funcs[i].opcode != NULL; i++)
 	{
 		if (strcmp(op, funcs[i].opcode) == 0)
 		{
 			funcs[i].f(stack, counter);
+			flag = 0;
 			return (0);
 		}
-		i++;
 	}
-	if (op && funcs[i].opcode == NULL)
+	if (flag == 1)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
 		close_free_and_fail(*stack, content, file);
