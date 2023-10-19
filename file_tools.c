@@ -13,6 +13,7 @@ int call_func(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	instruction_t funcs[] = {
 		{"push", push_to_stack}, {"pall", print_all}, {"pint", _pint},
 		{"pop", _pop}, {"swap", swap}, {"add", _add}, {"nop", nop},
+		{"pstr", pstr},
 		{NULL, NULL}
 	};
 	unsigned int i = 0;
