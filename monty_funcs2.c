@@ -41,9 +41,11 @@ void _div(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	result = ((*stack)->next->n) / ((*stack)->n);
-	_pop(stack, line_number); /*For top node*/
+	(*stack) = (*stack)->next;
+	result = (*stack)->n / (*stack)->prev->n;
 	(*stack)->n = result;
+	free((*stack)->prev);
+	(*stack)->prev = NULL;
 }
 
 /**
