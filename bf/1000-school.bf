@@ -10,5 +10,4 @@
 >-.+++++. print ch at acci 99 and 104 at cell 2 respectively
 >+.. print oo at cell 3 asci value 111
 <++++. print l at cell 2 asci value 108
-
-
+<<++++++++++.
