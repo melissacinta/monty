@@ -74,5 +74,7 @@ void _rotl(stack_t **stack, unsigned int line_number);
 void _stack(stack_t **stack, unsigned int line_number);
 void _queue(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void _sub(stack_t **stack, unsigned int line_number);
 
 #endif
+
