@@ -38,7 +38,7 @@ void _div(stack_t **stack, unsigned int line_number)
 	if ((*stack)->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
-		exit(EXIT_FAILURE);
+		close_free_and_fail(*stack, store.content, store.file);
 	}
 
 	(*stack) = (*stack)->next;
