@@ -15,6 +15,7 @@ int call_func(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		{"pop", _pop}, {"swap", swap}, {"add", _add}, {"nop", nop},
 		{"div", _div}, {"mod", _mod}, {"pchar", _pchar}, {"rotl", _rotl},
 		{"stack", _stack}, {"queue", _queue}, {"pstr", pstr}, {"sub", _sub},
+		{"mul", _mul},
 		{NULL, NULL}
 	};
 	unsigned int i = 0;
